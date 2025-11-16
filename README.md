@@ -53,7 +53,7 @@ function getValue&lt;T, K extends keyof T&gt;(obj: T, key: K): T[K] {
 
 <h2>৩. any, unknown, এবং never টাইপের পার্থক্য</h2>
 <ul>
-  <li><strong>any:</strong> যেকোনো টাইপ গ্রহণ করে; টাইপ চেকিং বাইপাস করে।</li>
+  <li><strong>any:</strong> যেকোনো টাইপ গ্রহণ করে টাইপ চেকিং বাইপাস করে।</li>
   <li><strong>unknown:</strong> যেকোনো টাইপ গ্রহণ করে, তবে ব্যবহার করার আগে টাইপ চেক করতে হয়।</li>
   <li><strong>never:</strong> এমন টাইপ যা কখনোই ঘটবে না (যেমন: error throw বা infinite loop)।</li>
 </ul>
