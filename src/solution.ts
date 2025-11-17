@@ -21,7 +21,7 @@ class Person {
     }
 
     getDetails() {
-        console.log(`Name: ${this.name}, Age: ${this.age}`);
+        console.log(`'Name: ${this.name}, Age: ${this.age}'`);
     }
 }
 
@@ -74,10 +74,18 @@ interface Product {
 }
 
 const calculateTotalPrice = (products: Product[]): number => {
-  return products
-    .map(product => product.price * product.quantity) 
-    .reduce((sum, total) => sum + total, 0);
-};
 
+  if (products.length === 0) return 0;
+
+  return products
+    .map(x => {
+      const basePrice = x.price * x.quantity;
+      const discountAmount = x.discount
+        ? basePrice * (x.discount / 100)
+        : 0;
+      return basePrice - discountAmount;
+    })
+    .reduce((sum, price) => sum + price, 0);
+};
 
 
